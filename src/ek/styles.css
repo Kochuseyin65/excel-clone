@@ -1,0 +1,17 @@
+table{
+    border-collapse: collapse;
+}
+table td{
+    border: 1px solid gray;
+    position: relative;
+}
+.Dragger{
+    cursor: col-resize;
+    height: 100%;
+    position: absolute;
+    right: -4px;
+    top: 0;
+    width: 8px;
+    z-index: 1;
+}
+

@@ -1,0 +1,381 @@
+@import "https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0";
+
+$color1: #107c41;
+$color2: #f3f2f1;
+$white: white;
+$color3: #f5f5f5;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+
+body {
+    height: 100vh;
+
+    main {
+        height: 100%;
+        background-color: $color2;
+
+        .header {
+            // position: sticky;
+            z-index: 1;
+            display: flex;
+            justify-content: space-between;
+            background-color: $color1;
+            align-items: center;
+            padding: 8px 20px;
+            color: white;
+
+            .page-info {
+                display: flex;
+                gap: 20px;
+            }
+
+            .search {
+                background-color: rgba(255,255,255, 0.7);
+                padding: 5px 10px;
+                width: 30%;
+                margin-right: 15%;
+
+                input {
+                    background-color: rgba(255,255,255, 0.1);
+                    border: none;
+                    // height: 100%;
+                    padding: 3px;
+                    width: 90%;
+
+                    &:focus {
+                        border: none;
+                        background-color: rgba(255,255,255, 0.1);
+                    }
+                }
+            }
+
+            .profile {
+                display: flex;
+                gap: 20px;
+                align-items: center;
+
+                .user {
+                    border-radius: 50%;
+                    border: 1px solid $white;
+                    padding: 7px;
+                }
+            }
+
+        }
+
+        .transactions {
+            background-color: $color2;
+
+            .pages {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                padding-left: 20px;
+
+                nav {
+                    
+                    ul {
+                        display: flex;
+                        gap: 25px;
+                        li {
+                            list-style-type: none;
+                            cursor: pointer;
+
+                            &.active {
+                                border-bottom: 4px solid $color1;
+                            }
+                        }
+                    }
+                }
+
+                .share {
+
+                    button {
+                        margin-left: 15px;
+                        padding: 3px 7px;
+                        color: $color1;
+                        font-size: 14px;
+                        font-weight: 200;
+                        border: rgba($color: #000000, $alpha: 0.3) 1px solid;
+                        
+
+                        &.share-btn {
+                            background-color: $color1;
+                            color: $white;
+                        }
+
+                        &.edit-btn {
+                            color: $color1;
+                            background-color: $white;
+                        }
+
+                        &.descriptions-btn {
+                            background-color: $white;
+                            i {
+                                color: $color1;
+                                // color: white;
+                                // background-color: white;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .funcs {
+                padding-left: 25px;
+                display: flex;
+                gap: 20px;
+                align-items: center;
+
+                .insert {
+                    display: flex;
+                    gap: 30px;
+                    
+                    .image {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 5px;
+                        font-size: 14px;
+                        padding: 3px 7px;
+                    }
+
+                    .shapes {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 3px 7px;
+                        gap: 6px;
+                        font-size: 14px;
+                        
+                    }
+                }
+
+                .pano{
+                    display: flex;
+                    gap: 10px;
+                    align-items: center;
+
+                    button {
+                        background: $color2;
+                        border: none;
+                    }
+                }
+
+                .font {
+                    display: flex;
+                    align-items: center;
+                    gap: 10px;
+                    padding-left: 8px;
+                    border-left: 1px solid rgba($color: #000000, $alpha: 0.2);
+
+                    .font-family {
+                        padding: 3px 10px;
+                        // font-size: 14px;
+                    }
+
+                    .font-size{
+                        padding: 3px 7px;
+                    }
+
+                    .thick {
+                        font-size: 20px;
+                        font-weight: bold;
+                        cursor: pointer;
+
+                        
+                    }
+
+                    .not {
+                        cursor: pointer;
+                    }
+
+                    div {
+                        margin-left: 10px;
+                        color: rgba($color: #080404, $alpha: 1);
+                    }
+
+                    .fill-color {
+                        position: relative;
+
+                        .sketch-picker {
+                            position: absolute;
+                            z-index: 100;
+                        }
+
+                    }
+
+                    .borders {
+                        // font-weight: 200;
+                    }
+
+                    .font-color {
+                        border-bottom: 5px red solid;
+                        position: relative;
+                        .sketch-picker {
+                            position: absolute;
+                            z-index: 100;
+                        }
+                    }
+                }
+            }
+        }
+
+
+        .table {
+
+            // scrollbar-color: $white;
+            
+            display: flex;
+            flex-direction: column;
+            background-color: $color2;
+            margin-top: 7px;
+            height: 77vh;
+
+            .inputs {
+                display: flex;
+                height: 32px;
+                padding: 5px 7px;
+
+                .functions {
+                    display: flex;
+                    flex: 10%;
+                    justify-content: space-around;
+                    align-items: center;
+                    background-color: $white;
+                    margin: 0px 5px;
+                    // padding: 5px;
+                    border: 1px solid rgba($color: #000000, $alpha: .3);
+
+                    .tic {
+                        color: rgba($color: #000000, $alpha: .6);
+                    }
+
+                    .cancel {
+                        margin-right: 2px;
+                        color: rgba($color: #000000, $alpha: .6);
+                    }
+                }
+
+                .cell {
+                    flex: 5%;
+                    // width: 100%;
+                    // padding: 0px 7px;
+                    border: 1px solid rgba($color: #000000, $alpha: .3);
+                }
+
+                .cell-value {
+                    flex: 90%;
+
+                    input {
+                        width: 100%;
+                        border: 1px solid rgba($color: #000000, $alpha: .3);
+
+                    }
+                }
+                
+            }
+
+            .table-body {
+                width: 100vw;
+                overflow: scroll;
+                
+                table {
+                    position: relative;
+                    img {
+                        position: absolute;
+                        z-index: 6588;
+                    }
+                }
+
+                table, th, td {
+                    border: 1px solid rgba($color: #000000, $alpha: .3);
+                    // border-top: none;
+                    border-collapse: collapse;
+                    border-top: none;
+                    
+                    
+                    
+                }
+
+                .different-color {
+                    background-color: $color2;
+
+                }
+                
+                table {
+                    width: 100%;
+                    table-layout: fixed;
+                    height: 100%;
+                    margin-top: 10px;
+                }
+
+                td {
+                    width: 60px;
+                    // padding: 0px 20px;
+                    // border-bottom: none;
+                    color: rgba($color: #000000, $alpha: .6);
+                    background-color: white;
+                    cursor: pointer;
+
+                    &.first-column {
+                        width: 40px;
+                        background-color: $color2;
+                        // display: flex;
+                        
+
+                        div {
+                            
+                            display: flex;
+                            justify-content: end;
+                            align-items: end;
+                            
+                            svg {
+                                transform: rotate(45deg) scale(1.5) translateY(2px);
+                                color: rgba($color: #000000, $alpha: .4);
+                                
+                            }
+                        }
+                    }
+
+                    &.row {
+                        background-color: $color2;
+                        text-align: center;
+                    }
+
+                    &.column {
+                        border-top: none;
+                        background-color: $color2;
+                        text-align: center;
+                        
+
+                        div {
+                            color: rgba($color: #000000, $alpha: .7);
+                        }
+                    }
+
+                    &.active-cell {
+                        border: 3px solid $color1;
+                    }
+
+                    div {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        
+                    }
+                }
+            }
+        }
+
+        .excel-pages-navigate {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+    }
+}
