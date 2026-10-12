@@ -1,4 +1,4 @@
-"""Asus ROG Strix + RTX 4060 + Intel Core i7 13. nesil ilan tablosunu (xlsx + csv) üretir.
+"""Asus ROG Strix + RTX 4060 + Intel Core i7 13. nesil ilan tablosunu (sadece Türkiye, xlsx + csv) üretir.
 
 Veriler 12 Ekim 2026'da web aramasıyla toplandı. Fiyatlar ve stok durumu
 anlık görüntüdür; satın almadan önce linkten kontrol edin.
@@ -11,12 +11,12 @@ from openpyxl.styles import Alignment, Font, PatternFill
 from openpyxl.utils import get_column_letter
 
 OUT_DIR = Path(__file__).parent
-BASENAME = "asus_rog_strix_rtx4060_i7_13nesil"
+BASENAME = "asus_rog_strix_rtx4060_i7_13nesil_turkiye"
 
 HEADERS = [
     "No", "Durum", "Seri", "Model Kodu", "İşlemci", "Ekran Kartı", "RAM",
     "Depolama (SSD)", "Ekran", "İşletim Sistemi", "Fiyat", "Para Birimi",
-    "Satıcı / Platform", "Ülke", "Stok / İlan Durumu",
+    "Satıcı / Platform", "Stok / İlan Durumu",
     "Kondisyon / Açıklama (ikinci el için)", "Veri Tarihi", "Link",
 ]
 
@@ -27,7 +27,7 @@ G18_SCREEN = '18" QHD+ 2560x1600 240Hz'
 
 # (durum, seri, model kodu, ram, ssd, ekran, os, fiyat, para birimi, satıcı, ülke, stok, kondisyon, tarih, link)
 ROWS = [
-    # ---------------- SIFIR (TÜRKİYE) ----------------
+    # ---------------- SIFIR ----------------
     ("Sıfır", "ROG Strix G16 (2023)", "G614JV-N3110W", "16GB DDR5", "512GB", G16_SCREEN, "Windows 11", 49366, "TL",
      "Vatan Bilgisayar", "TR", "Tükendi", "", "Ekim 2026",
      "https://www.vatanbilgisayar.com/asus-rog-strix-g16-13-nesil-core-i7-13650hx-16gb-512gb-16inc-rtx4060-8gb-w11.html"),
@@ -91,41 +91,7 @@ ROWS = [
     ("Sıfır", "ROG Strix G16 (2023)", "G614JV-N3211", "16GB DDR5", "512GB", G16_SCREEN, "-", None, "TL",
      "ASUS Türkiye resmi mağaza", "TR", "Fiyat görülemedi", "", "Ekim 2026",
      "https://shop.asus.com/tr/90nr0c61-m016j0-rog-strix-g16-2023.html"),
-    # ---------------- SIFIR (YURT DIŞI) ----------------
-    ("Sıfır", "ROG Strix G16 (2024 pazarlama adı)", "G614JV-AS74", "16GB DDR5", "1TB", '16" FHD+ 1920x1200 165Hz', "Windows 11", 1550, "USD",
-     "Newegg", "ABD", "Listede", "", "Ekim 2026",
-     "https://www.newegg.com/asus-16-0-geforce-rtx-4060-laptop-gpu/p/2WC-000N-0F9N2"),
-    ("Sıfır", "ROG Strix G16 (2024 pazarlama adı)", "G614JV-AS74", "16GB DDR5", "1TB", '16" FHD+ 1920x1200 165Hz', "Windows 11", 1539.99, "USD",
-     "Amazon ABD (3. parti satıcı)", "ABD", "Amazon'un kendi stoğu yok", "Amazon'un en düşük fiyatı 1.099,99 USD (25.02.2025)", "14.08.2026",
-     "https://camelcamelcamel.com/product/B0CRDCXRK2"),
-    ("Sıfır", "ROG Strix G16", "G614JV (16GB/1TB)", "16GB DDR5", "1TB", '16"', "-", 1349.99, "USD",
-     "eBay", "ABD", "Stokta yok", "İlan başlığında 'NEW'", "Ekim 2026",
-     "https://www.ebay.com/itm/267580664633"),
-    ("Sıfır", "ROG Strix G16", "G614JV (32GB/1TB)", "32GB DDR5 (yükseltilmiş)", "1TB", '16" FHD+ 165Hz', "Windows 11 Pro", None, "USD",
-     "Amazon ABD", "ABD", "Fiyat görülemedi", "Satıcı yükseltmeli paket", "Ekim 2026",
-     "https://us.amazon.com/ASUS-ROG-Strix-G16-Thunderbolt4/dp/B0G1BDH13F"),
-    ("Sıfır", "ROG Strix G16", "G614JV (32GB/2TB)", "32GB DDR5 (yükseltilmiş)", "2TB", G16_SCREEN, "Windows 11 Home", None, "USD",
-     "Amazon ABD", "ABD", "Fiyat görülemedi", "Satıcı yükseltmeli paket", "Ekim 2026",
-     "https://www.amazon.com/ASUS-i7-13650HX-GeForce-Keyboard-Thunderbolt/dp/B0G25Q5H1K"),
-    ("Sıfır", "ROG Strix G16 (2023)", "G614JV-N3076W", "32GB DDR5", "1TB", '16"', "Windows 11 Home", 1681.56, "EUR",
-     "PCBOX / PcComponentes", "İspanya", "Stokta yok", "", "Ekim 2026",
-     "https://www.pcbox.com/product/g614jv-n3076w-rog-i7-13650hx-32gb1tb-rtx4060-16--w11h"),
-    ("Sıfır", "ROG Strix G18", "G814JV-RS75", "16GB DDR5", "2TB", G18_SCREEN, "Windows 11 Home", 1649.99, "USD",
-     "Walmart", "ABD", "Listede (diğer satıcılar 1.699,99 USD'den)", "", "Ekim 2026",
-     "https://www.walmart.com/ip/Asus-ROG-Strix-G18-G814-18-QHD-Intel-Core-i7-13650HX-NVIDIA-GeForce-RTX-4060-16GB-RAM-2TB-SSD-Windows-11-Home-G814JV-RS75/5400173247"),
-    ("Sıfır", "ROG Strix G18", "G814JV-RS75", "16GB DDR5", "2TB", G18_SCREEN, "Windows 11 Home", 1649.99, "USD",
-     "Newegg (Electronic Express)", "ABD", "Listede", "", "Ekim 2026",
-     "https://www.newegg.com/asus-18-0-geforce-rtx-4060/p/26J-05GJ-00003"),
-    ("Sıfır", "ROG Strix G18", "G814JV-RS75", "16GB DDR5", "2TB", G18_SCREEN, "Windows 11 Home", None, "USD",
-     "Adorama", "ABD", "Artık satılmıyor", "", "Ekim 2026",
-     "https://www.adorama.com/asg814jvrs75.html"),
-    ("Sıfır", "ROG Strix G18", "G814JV (32GB/2TB)", "32GB DDR5 (yükseltilmiş)", "2TB", '18"', "-", None, "USD",
-     "Amazon ABD", "ABD", "Fiyat görülemedi", "", "Ekim 2026",
-     "https://www.amazon.com/ASUS-Strix-i7-13650HX-Gaming-Laptop/dp/B0H46F4YVF"),
-    ("Sıfır", "ROG Strix G18", "G814JV-N5010 / N5002", "16GB DDR5", "1TB", '18"', "FreeDOS", 2059, "USD",
-     "eBay", "-", "Stokta (3 adet)", "", "Ekim 2026",
-     "https://www.ebay.com/itm/225469248714"),
-    # ---------------- İKİNCİ EL / YENİLENMİŞ ----------------
+    # ---------------- İKİNCİ EL ----------------
     ("İkinci el", "ROG Strix G16 (2023)", "G614JV", "16GB DDR5", "-", '16" 165Hz', "-", 57000, "TL",
      "DonanımHaber forum", "TR", "İlan (durumu bilinmiyor)",
      "2,5 ay kullanılmış; hafif oyun ve video izleme; kutu, fatura ve garanti mevcut. Satıcıya göre sıfır fiyatı o tarihte 64-66 bin TL.",
@@ -142,58 +108,6 @@ ROWS = [
      "DonanımArşivi forum", "TR", "Eski ilan (~2,5 yıl önce)",
      "Kondisyon belirtilmemiş. Forumda RAM hız oranı ve 16 inç ekran zayıf yön olarak eleştirilmiş.",
      "~2024", "https://forum.donanimarsivi.com/konu/asus-rog-strix-i7-13650hx-rtx-4060-ikinci-el-40-bin-alinir-mi.898488/"),
-    ("İkinci el", "ROG Strix G16 (2023)", "G614JV", "16GB DDR5", "1TB", '16"', "-", None, "USD",
-     "eBay", "-", "İlan",
-     "2023'te Çin'deki resmi ASUS mağazasından (JD.com) alınmış; ezik ve çizik yok; hiç onarım görmemiş; orijinal şarj aleti dahil. Türkiye'de garanti/servis sorunu çıkabilir.",
-     "Ekim 2026", "https://www.ebay.com/itm/136183928514"),
-    ("İkinci el", "ROG Strix G16", "G614 (FHD+)", "16GB DDR5", "512GB", '16" FHD+', "-", None, "USD",
-     "eBay", "-", "İlan",
-     "KÜÇÜK ÇERÇEVE ÇATLAĞI: çerçeve köşesinde çatlak var, çalışmayı etkilemiyor. Ekranda orta düzey çizik olabilir.",
-     "Ekim 2026", "https://www.ebay.com/itm/287126162834"),
-    ("Yenilenmiş (ikinci el)", "ROG Strix G16", "G614JV", "16GB DDR5", "512GB", '16" 165Hz', "-", None, "USD",
-     "eBay", "-", "İlan",
-     "'Good - Refurbished'. HDMI portu yanında kasa sürtmeleri, ekranda klavye izleri, kapakta ezikler var. Pil sağlığı yaklaşık %81. Fotoğraftaki haliyle satılıyor.",
-     "Ekim 2026", "https://www.ebay.com/itm/137748390525"),
-    ("Yenilenmiş (ikinci el)", "ROG Strix G16", "G614 (FHD+)", "16GB DDR5", "512GB", '16" FHD+ 165Hz', "-", None, "USD",
-     "eBay", "-", "İlan",
-     "'Excellent' kondisyon; pil en az %80 ve normal çalışır durumda. Bir alıcı cihazın çiziksiz geldiğini yazmış.",
-     "Ekim 2026", "https://www.ebay.com/itm/297288188796"),
-    ("İkinci el", "ROG Strix G16", "G614 (FHD+)", "16GB DDR5", "1TB", '16" FHD+', "-", None, "USD",
-     "eBay", "-", "İlan",
-     "Pil 'normal çalışır durumda'; başka kondisyon detayı yok.",
-     "Ekim 2026", "https://www.ebay.com/itm/297779322365"),
-    ("İkinci el", "ROG Strix G16", "G614JV", "48GB DDR5 (yükseltilmiş)", "1TB + 2TB (3TB)", '16" FHD', "-", None, "USD",
-     "eBay", "-", "İlan",
-     "Sadece 'Used' yazıyor; kondisyon detayı yok.",
-     "Ekim 2026", "https://www.ebay.com/itm/317200044862"),
-    ("İkinci el", "ROG Strix G16 (2023)", "G614JV", "16GB DDR5", "512GB", '16"', "-", None, "USD",
-     "eBay", "-", "İlan",
-     "Kullanılmış; 'bazı kullanım izleri olabilir'. Şarj aleti ile ilgili kısım belirsiz.",
-     "Ekim 2026", "https://www.ebay.com/itm/366289262822"),
-    ("Yenilenmiş / açık kutu", "ROG Strix G16", "G614JV-AS74", "16GB DDR5", "1TB", '16" FHD+ 165Hz', "Windows 11", 1205.50, "USD",
-     "eBay (Certified Refurbished)", "ABD", "İlan",
-     "Açık kutu; küçük kozmetik izler olabilir. Bir alıcı kendi cihazında çizik olduğunu bildirmiş. Ücretsiz kargo.",
-     "Ekim 2026", "https://www.ebay.com/itm/167005825595"),
-    ("İkinci el", "ROG Strix G16", "G614J", "16GB DDR5", "1TB", '16"', "-", 949.99, "USD",
-     "eBay", "-", "Stokta yok (~115 gün önce)",
-     "Kullanılmış; üretici garantisi yok.",
-     "Haziran 2026", "https://www.ebay.com/itm/298397441013"),
-    ("İkinci el", "ROG Strix G16", "G614JV", "16GB DDR5", "512GB (477GB görünen)", '16" 2560x1600', "-", 915, "USD",
-     "eBay", "-", "İlan (pazarlık açık)",
-     "Kullanılmış; detaylı kondisyon bilgisi bulunamadı.",
-     "Ekim 2026", "https://www.ebay.com/itm/137779338517"),
-    ("İkinci el", "ROG Strix G16", "G614JV-AS74", "16GB DDR5", "1TB", '16" FHD+ 165Hz', "-", None, "USD",
-     "PayMore", "ABD", "İlan",
-     "Üst kapak iyi durumda, çok az aşınma var. Ekran iyi, hafif aşınma ve sürtme izleri var.",
-     "Ekim 2026", "https://paymore.com/shop/product/8206882439349/"),
-    ("İkinci el", "ROG Strix G16", "G614JV", "16GB DDR5", "1TB", '16" 165Hz', "-", None, "USD",
-     "eBay", "-", "İlan",
-     "Başlıkta 'READ' var, yani açıklamada önemli bir not/kusur olabilir. Detay doğrulanamadı.",
-     "Ekim 2026", "https://www.ebay.com/itm/178523624103"),
-    ("İkinci el", "ROG Strix G18", "G814 (CPU/GPU doğrulanmalı)", "-", "-", '18"', "-", 1400, "USD",
-     "eBay", "-", "İlan (pazarlık açık)",
-     "'Pre-Owned'. İlanda CPU/GPU yazmıyor; satıcının hiç geri bildirimi yok (0). Riskli.",
-     "Ekim 2026", "https://www.ebay.com/shop/asus-rog-strix-g18?_nkw=asus+rog+strix+g18"),
 ]
 
 FILL = {
@@ -208,7 +122,7 @@ def records():
     for i, r in enumerate(ROWS, 1):
         durum, seri, kod, ram, ssd, ekran, os_, fiyat, pb, satici, ulke, stok, kond, tarih, link = r
         yield [i, durum, seri, kod, CPU, GPU, ram, ssd, ekran, os_, fiyat, pb,
-               satici, ulke, stok, kond, tarih, link]
+               satici, stok, kond, tarih, link]
 
 
 def write_xlsx(path):
@@ -228,10 +142,10 @@ def write_xlsx(path):
             c.fill = PatternFill("solid", fgColor=color)
             c.alignment = Alignment(vertical="top", wrap_text=True)
         ws.cell(row, 11).number_format = "#,##0.00"
-        link = ws.cell(row, 18)
+        link = ws.cell(row, 17)
         link.hyperlink = link.value
         link.font = Font(color="0563C1", underline="single")
-    widths = [5, 20, 22, 24, 26, 13, 20, 16, 24, 15, 12, 8, 26, 8, 22, 60, 12, 50]
+    widths = [5, 12, 22, 24, 26, 13, 20, 16, 24, 15, 12, 8, 28, 22, 60, 12, 50]
     for i, w in enumerate(widths, 1):
         ws.column_dimensions[get_column_letter(i)].width = w
     ws.freeze_panes = "E2"
@@ -239,7 +153,7 @@ def write_xlsx(path):
 
     notes = wb.create_sheet("Notlar")
     for line in [
-        "Asus ROG Strix + RTX 4060 + Intel Core i7 13. nesil (i7-13650HX) ilan taraması",
+        "Asus ROG Strix + RTX 4060 + Intel Core i7 13. nesil (i7-13650HX) ilan taraması - SADECE TÜRKİYE",
         "Tarama tarihi: 12 Ekim 2026",
         "",
         "Bu kombinasyon 2 seride var: ROG Strix G16 (G614JV, 16\") ve ROG Strix G18 (G814JV, 18\").",
@@ -247,7 +161,8 @@ def write_xlsx(path):
         "2024 serisi G614JVR / G814JVR i7-14650HX (14. nesil) kullandığı için tabloya alınmadı.",
         "Sadece anakart satan 'parça' ilanları da tabloya alınmadı.",
         "",
-        "Renkler: yeşil = sıfır, turuncu = ikinci el, sarı = yenilenmiş / açık kutu.",
+        "Renkler: yeşil = sıfır, turuncu = ikinci el.",
+        "ROG Strix G18 (G814JV) için Türkiye'de güncel TL ilanı bulunamadı.",
         "'(yükseltilmiş)' = RAM/SSD fabrika çıkışı değil, satıcı tarafından artırılmış.",
         "Boş fiyat = arama sonucunda fiyat görünmedi; linkten kontrol edin.",
         "",
